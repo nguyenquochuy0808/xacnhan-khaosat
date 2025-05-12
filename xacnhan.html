@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Xác nhận khảo sát</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+      padding-top: 100px;
+    }
+    h1 {
+      color: #2a7ae2;
+      font-size: 32px;
+    }
+    .info {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>XÁC NHẬN HOÀN THÀNH KHẢO SÁT</h1>
+  <div class="info" id="msg"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    if (id) {
+      document.getElementById('msg').innerText = `Cảm ơn ID: ${id} đã hoàn thành khảo sát.`;
+    } else {
+      document.getElementById('msg').innerText = `Không tìm thấy ID trong đường dẫn.`;
+    }
+  </script>
+</body>
+</html>
